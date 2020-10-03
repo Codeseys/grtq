@@ -22,7 +22,7 @@ func NewDefaultGRManager() *GRManager {
 	gm := &GRTChannelMap{}
 	delall := make(chan string)
 	var wg = &sync.WaitGroup{}
-	pool, _ := ants.NewPool(math.MaxInt32, ants.WithExpiryDuration(time.Second * 2))
+	pool, _ := ants.NewPool(math.MaxInt32,) //ants.WithExpiryDuration(time.Second * 2))
 	return &GRManager{GRTChannelMap: gm, delall: delall, wg: wg, pool: pool}
 }
 
